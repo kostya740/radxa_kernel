@@ -172,6 +172,7 @@
 	};
 
 	es8316-sound {
+		status = "disabled";
 		compatible = "simple-audio-card";
 		simple-audio-card,format = "i2s";
 		simple-audio-card,name = "rockchip,es8316-codec";
@@ -214,6 +215,7 @@
 	};
 
 	hdmi_codec: hdmi-codec {
+		status = "disabled";
 		compatible = "simple-audio-card";
 		simple-audio-card,format = "i2s";
 		simple-audio-card,mclk-fs = <256>;
@@ -229,9 +231,9 @@
 	};
 
 	spdif-sound {
-		status = "disabled";
+		status = "okay";
 		compatible = "simple-audio-card";
-		simple-audio-card,name = "ROCKCHIP,SPDIF";
+		simple-audio-card,name = "rockchipspdif";
 		simple-audio-card,cpu {
 			sound-dai = <&spdif>;
 		};
@@ -241,7 +243,7 @@
 	};
 
 	spdif_out: spdif-out {
-		status = "disabled";
+		status = "okay";
 		compatible = "linux,spdif-dit";
 		#sound-dai-cells = <0>;
 	};
@@ -399,8 +401,7 @@
 };
 
 &spdif {
-	pinctrl-0 = <&spdif_bus_1>;
-	status = "disabled";
+	status = "ok";
 	#sound-dai-cells = <0>;
 };
 
